@@ -7,18 +7,6 @@ import kotlinx.android.parcel.RawValue
 
 @Parcelize
 data class Pokemon(
-//        @Expose
-//        var id: Int? = null,
-//        @Expose
-//        var name: String? = "",
-//        @Expose
-//        var baseExperience: Int? = null,
-//        @Expose
-//        var height: Int? = null,
-//        @Expose
-//        var weight: Int? = null,
-//        @Expose
-//        var sprites: @RawValue Sprites? = null
         @Expose
         val id: Int? = null,
         @Expose
