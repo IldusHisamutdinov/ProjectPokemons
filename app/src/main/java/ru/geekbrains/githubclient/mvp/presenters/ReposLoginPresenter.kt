@@ -20,10 +20,10 @@ class ReposLoginPresenter : MvpPresenter<ReposLoginView>() {
     lateinit var router: Router
 
     var repos:ReposGithubUser? = null
-        var pokemon: Pokemon? = null
 
     override fun onFirstViewAttach() {
         super.onFirstViewAttach()
+        repos?.let { viewState.init(it) }
         loadPokemon()
     }
 
@@ -31,7 +31,6 @@ class ReposLoginPresenter : MvpPresenter<ReposLoginView>() {
         userRepo.getRepositories(repos?.img.toString())
                 .observeOn(mainThreadScheduler)
                 .subscribe({
-       //             pokemon = it
                     viewState.init(it)
                     it.img?.let {
                         viewState.loadImage(it)

@@ -7,4 +7,5 @@ interface LoginItemView: IItemView {
     fun setName(text: String)
     fun bind(pokemon: ReposGithubUser)
     fun loadAvatar(url: String)
+    fun id(text: String)
 }

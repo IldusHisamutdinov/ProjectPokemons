@@ -36,16 +36,7 @@ class UsersPresenter() : MvpPresenter<UsersView>() {
 
         override fun bindView(view: LoginItemView) {
             val user = users[view.pos]
-  //          view.setName(user)
-//            userRepo.getRepositories(user.img.toString()).observeOn(scheduler)
-////                    .subscribe({ pokemon ->
-////                        view.bind(pokemon)
-////                        user.name?.let {
-////                            view.loadAvatar(it)
-////                        }
-////                    }, {
-////                        viewState.snowError(it)
-////                    })
+            user.id?.let { view.id(it) }
             user.name?.let { view.setName(it)}
             user.img?.let { view.loadAvatar(it) }
         }

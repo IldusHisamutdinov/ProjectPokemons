@@ -45,11 +45,15 @@ class UsersRVAdapter(
 
         override fun bind(pokemon: ReposGithubUser) = with(containerView) {
             name_pokemon.text = pokemon.name
-            id_pokemon.text = pokemon.id.toString()
+            id_pokemon.text = pokemon.id
         }
 
         override fun loadAvatar(url: String) = with(containerView) {
             imageLoader.loadInto(url, img_pokemon)
+        }
+
+        override fun id(text: String) = with(containerView) {
+            id_pokemon.text = text
         }
     }
 }

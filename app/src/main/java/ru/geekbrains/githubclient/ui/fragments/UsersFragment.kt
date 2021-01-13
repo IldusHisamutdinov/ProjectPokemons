@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.fragment_users.*
 import moxy.MvpAppCompatFragment
@@ -41,7 +42,7 @@ class UsersFragment : MvpAppCompatFragment(), UsersView, BackButtonListener {
 
     override fun init() {
         rv_users.layoutManager =
-                LinearLayoutManager(context)
+                GridLayoutManager(context,2)
         adapter = UsersRVAdapter(presenter.usersListPresenter).apply {
             GithubApplication.instance.initUserSubcomponent().inject(this)
         }
