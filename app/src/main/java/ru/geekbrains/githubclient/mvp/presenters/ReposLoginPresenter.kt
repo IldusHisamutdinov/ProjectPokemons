@@ -24,7 +24,8 @@ class ReposLoginPresenter : MvpPresenter<ReposLoginView>() {
     override fun onFirstViewAttach() {
         super.onFirstViewAttach()
         repos?.let { viewState.init(it) }
-        loadPokemon()
+        repos?.let { repos!!.img?.let { viewState.loadImage(it) } }
+ //       loadPokemon()
     }
 
     fun loadPokemon() {
